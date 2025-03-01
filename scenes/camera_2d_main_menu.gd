@@ -10,5 +10,5 @@ func cameraUpdate():
 	else:
 		$"../CharacterBody2D/Sprite2D".flip_h = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	cameraUpdate()
