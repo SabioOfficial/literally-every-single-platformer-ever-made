@@ -67,6 +67,7 @@ radius = 17.0
 [node name="Flip-orb" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b1hyx")
+autoplay = "default"
 frame_progress = 0.966859
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
