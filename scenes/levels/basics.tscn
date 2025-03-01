@@ -1,17 +1,17 @@
 [gd_scene load_steps=35 format=4 uid="uid://cjain0ba7nmt0"]
 
-[ext_resource type="Texture2D" uid="uid://fp6u7megs6n6" path="res://Blue.png" id="1_0rms5"]
-[ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://Terrain (16x16).png" id="2_pufh6"]
-[ext_resource type="PackedScene" uid="uid://dj1xe216u3ibt" path="res://scenes/main_character.tscn" id="3_mbnob"]
-[ext_resource type="PackedScene" uid="uid://dfrlfmxy3jr1d" path="res://scenes/banana.tscn" id="4_rhlkk"]
-[ext_resource type="PackedScene" uid="uid://8vweqmt565p3" path="res://scenes/end.tscn" id="5_sgx7i"]
-[ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://fonts/AlbertSans-Bold.ttf" id="6_17c1e"]
-[ext_resource type="Script" path="res://game_manager.gd" id="6_josyn"]
-[ext_resource type="Script" path="res://scenes/antifall_2d.gd" id="7_r2lrk"]
-[ext_resource type="Texture2D" uid="uid://dnho6lujrionu" path="res://Bananas.png" id="9_towk5"]
+[ext_resource type="Texture2D" uid="uid://fp6u7megs6n6" path="res://Blue.png" id="1_rsf17"]
+[ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://Terrain (16x16).png" id="2_x1awg"]
+[ext_resource type="PackedScene" uid="uid://dj1xe216u3ibt" path="res://scenes/main_character.tscn" id="3_470kk"]
+[ext_resource type="PackedScene" uid="uid://dfrlfmxy3jr1d" path="res://scenes/banana.tscn" id="4_t3v67"]
+[ext_resource type="PackedScene" uid="uid://8vweqmt565p3" path="res://scenes/end.tscn" id="5_1f3t4"]
+[ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://fonts/AlbertSans-Bold.ttf" id="6_i0fqw"]
+[ext_resource type="Script" path="res://scenes/antifall_2d.gd" id="7_pj4vq"]
+[ext_resource type="Script" path="res://game_manager.gd" id="8_4ahrk"]
+[ext_resource type="Texture2D" uid="uid://dnho6lujrionu" path="res://Bananas.png" id="9_xvsvu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho5qb"]
-texture = ExtResource("2_pufh6")
+texture = ExtResource("2_x1awg")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -209,7 +209,7 @@ _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7kp1"]
-size = Vector2(7239, 365)
+size = Vector2(8325, 365)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jtc4"]
 bg_color = Color(0, 0, 0, 0.156863)
@@ -222,71 +222,71 @@ shadow_size = 2
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyw70"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rb6ja"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ni7ra"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mur2p"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ju0y5"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2534g"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pghq"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oegrm"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ub5n"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axakv"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbdxq"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvgb5"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qvrl"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a02k"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vt24"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(448, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7b1ld"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(480, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggx1i"]
-atlas = ExtResource("9_towk5")
+atlas = ExtResource("9_xvsvu")
 region = Rect2(512, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8uvu7"]
@@ -356,9 +356,9 @@ animations = [{
 texture_filter = 1
 offset_left = -1366.0
 offset_top = -564.0
-offset_right = 5874.0
+offset_right = 6958.0
 offset_bottom = 1162.0
-texture = ExtResource("1_0rms5")
+texture = ExtResource("1_rsf17")
 stretch_mode = 1
 
 [node name="Layer0" type="TileMapLayer" parent="SceneObjects"]
@@ -368,8 +368,9 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAACcAAAAGAAAAAAABACcAAAAGAAAAAAACACcAAAAGAAAAAAADACcAAAAGAAAAAAAEACcAAAAGAAAAAAAAAAsAAAAGAAAAAAAAAAwAAAAGAAEAAAAAAA0AAAAGAAIAAAABAAsAAAAHAAAAAAABAAwAAAAHAAEAAAABAA0AAAAHAAIAAAACAAsAAAAHAAAAAAACAAwAAAAHAAEAAAACAA0AAAAHAAIAAAADAAsAAAAHAAAAAAADAAwAAAAHAAEAAAADAA0AAAAHAAIAAAAEAAsAAAAHAAAAAAAEAAwAAAAHAAEAAAAEAA0AAAAHAAIAAAAFAAsAAAAHAAAAAAAFAAwAAAAHAAEAAAAFAA0AAAAHAAIAAAAGAAsAAAAHAAAAAAAGAAwAAAAHAAEAAAAGAA0AAAAHAAIAAAAHAAsAAAAHAAAAAAAHAAwAAAAHAAEAAAAHAA0AAAAHAAIAAAAIAAsAAAAHAAAAAAAIAAwAAAAHAAEAAAAIAA0AAAAHAAIAAAAJAAsAAAAHAAAAAAAJAAwAAAAHAAEAAAAJAA0AAAAHAAIAAAAKAAsAAAAHAAAAAAAKAAwAAAAHAAEAAAAKAA0AAAAHAAIAAAALAAsAAAAHAAAAAAALAAwAAAAHAAEAAAALAA0AAAAHAAIAAAAMAAsAAAAHAAAAAAAMAAwAAAAHAAEAAAAMAA0AAAAHAAIAAAANAAsAAAAHAAAAAAANAAwAAAAHAAEAAAANAA0AAAAHAAIAAAAOAAsAAAAHAAAAAAAOAAwAAAAHAAEAAAAOAA0AAAAHAAIAAAAPAAsAAAAHAAAAAAAPAAwAAAAHAAEAAAAPAA0AAAAHAAIAAAAQAAsAAAAHAAAAAAAQAAwAAAAHAAEAAAAQAA0AAAAHAAIAAAARAAsAAAAHAAAAAAARAAwAAAAHAAEAAAARAA0AAAAHAAIAAAASAAsAAAAHAAAAAAASAAwAAAAHAAEAAAASAA0AAAAHAAIAAAATAAsAAAAHAAAAAAATAAwAAAAHAAEAAAATAA0AAAAHAAIAAAAUAAsAAAAHAAAAAAAUAAwAAAAHAAEAAAAUAA0AAAAHAAIAAAAVAAsAAAAHAAAAAAAVAAwAAAAHAAEAAAAVAA0AAAAHAAIAAAAWAAsAAAAHAAAAAAAWAAwAAAAHAAEAAAAWAA0AAAAHAAIAAAAXAAsAAAAHAAAAAAAXAAwAAAAHAAEAAAAXAA0AAAAHAAIAAAAMAAkAAAAPAAQAAAAMAAoAAAAPAAUAAAAYAAsAAAAHAAAAAAAYAAwAAAAHAAEAAAAYAA0AAAAHAAIAAAAZAAsAAAAHAAAAAAAZAAwAAAAHAAEAAAAZAA0AAAAHAAIAAAAaAAsAAAAHAAAAAAAaAAwAAAAHAAEAAAAaAA0AAAAHAAIAAAAbAAsAAAAHAAAAAAAbAAwAAAAHAAEAAAAbAA0AAAAHAAIAAAAcAAsAAAAHAAAAAAAcAAwAAAAHAAEAAAAcAA0AAAAHAAIAAAAdAAsAAAAHAAAAAAAdAAwAAAAHAAEAAAAdAA0AAAAHAAIAAAAeAAsAAAAHAAAAAAAeAAwAAAAHAAEAAAAeAA0AAAAHAAIAAAAfAAsAAAAHAAAAAAAfAAwAAAAHAAEAAAAfAA0AAAAHAAIAAAAgAAsAAAAHAAAAAAAgAAwAAAAHAAEAAAAgAA0AAAAHAAIAAAAhAAsAAAAHAAAAAAAhAAwAAAAHAAEAAAAhAA0AAAAHAAIAAAAiAAsAAAAHAAAAAAAiAAwAAAAHAAEAAAAiAA0AAAAHAAIAAAAjAAsAAAAHAAAAAAAjAAwAAAAHAAEAAAAjAA0AAAAHAAIAAAAkAAsAAAAHAAAAAAAkAAwAAAAHAAEAAAAkAA0AAAAHAAIAAAAlAAsAAAAHAAAAAAAlAAwAAAAHAAEAAAAlAA0AAAAHAAIAAAAmAAsAAAAHAAAAAAAmAAwAAAAHAAEAAAAmAA0AAAAHAAIAAAAnAAsAAAAHAAAAAAAnAAwAAAAHAAEAAAAnAA0AAAAHAAIAAAAoAAsAAAAHAAAAAAAoAAwAAAAHAAEAAAAoAA0AAAAHAAIAAAApAAsAAAAHAAAAAAApAAwAAAAHAAEAAAApAA0AAAAHAAIAAAAqAAsAAAAHAAAAAAAqAAwAAAAHAAEAAAAqAA0AAAAHAAIAAAArAAsAAAAHAAAAAAArAAwAAAAHAAEAAAArAA0AAAAHAAIAAAAsAAsAAAAHAAAAAAAsAAwAAAAHAAEAAAAsAA0AAAAHAAIAAAAtAAsAAAAHAAAAAAAtAAwAAAAHAAEAAAAtAA0AAAAHAAIAAAAuAAsAAAAIAAAAAAAuAAwAAAAIAAEAAAAuAA0AAAAIAAIAAAAfAAkAAAAMAAQAAAAgAAkAAAANAAQAAAAhAAkAAAAOAAQAAAAkAAgAAAAMAAQAAAAlAAgAAAANAAQAAAAmAAgAAAAOAAQAAAApAAcAAAAMAAQAAAAqAAcAAAANAAQAAAArAAcAAAAOAAQAAAAvAAAAAAAPAAQAAAAvAAEAAAAPAAUAAAAvAAIAAAAPAAUAAAAvAAkAAAAPAAUAAAAvAAYAAAAPAAQAAAAvAAcAAAAPAAUAAAAvAAgAAAAPAAUAAAAvAAMAAAAPAAYAAAA3AAYAAAAAAAAAAAA3AAcAAAAAAAEAAAA3AAgAAAAAAAIAAAA4AAYAAAABAAAAAAA4AAcAAAABAAEAAAA4AAgAAAABAAIAAAA5AAYAAAACAAAAAAA5AAcAAAACAAEAAAA5AAgAAAACAAIAAAA8AAYAAAAAAAAAAAA8AAcAAAAAAAEAAAA8AAgAAAAAAAIAAAA9AAYAAAABAAAAAAA9AAcAAAABAAEAAAA9AAgAAAABAAIAAAA+AAYAAAACAAAAAAA+AAcAAAACAAEAAAA+AAgAAAACAAIAAABBAAUAAAAAAAAAAABBAAYAAAAAAAEAAABBAAcAAAAAAAIAAABCAAUAAAABAAAAAABCAAYAAAABAAEAAABCAAcAAAABAAIAAABDAAUAAAACAAAAAABDAAYAAAACAAEAAABDAAcAAAACAAIAAAAvAA0AAAAPAAYAAAAvAAwAAAAPAAUAAAAvAAsAAAAPAAUAAAAvAAoAAAAPAAUAAAAyAAgAAAAAAAEAAAAyAAkAAAAAAAIAAAAzAAgAAAABAAEAAAAzAAkAAAABAAIAAAA0AAgAAAACAAEAAAA0AAkAAAACAAIAAAAyAAcAAAAAAAAAAAAzAAcAAAABAAAAAAA0AAcAAAACAAAAAABGAAUAAAARAAEAAABHAAUAAAASAAEAAABIAAUAAAASAAEAAABJAAUAAAASAAEAAABKAAUAAAASAAEAAABLAAUAAAASAAEAAABNAAUAAAASAAEAAABMAAUAAAASAAEAAABOAAUAAAASAAEAAABPAAUAAAASAAEAAABQAAUAAAASAAEAAABRAAUAAAASAAEAAABSAAUAAAASAAEAAABTAAUAAAASAAEAAABUAAUAAAASAAEAAABVAAUAAAASAAEAAABWAAUAAAASAAEAAABXAAUAAAASAAEAAABYAAUAAAASAAEAAABZAAUAAAASAAEAAABaAAUAAAASAAEAAABbAAUAAAASAAEAAABcAAUAAAASAAEAAABdAAUAAAASAAEAAABeAAUAAAASAAEAAABfAAUAAAASAAEAAABgAAUAAAATAAEAAAA=")
 tile_set = SubResource("TileSet_a72yt")
 
-[node name="CharacterBody2D" parent="SceneObjects" instance=ExtResource("3_mbnob")]
+[node name="CharacterBody2D" parent="SceneObjects" instance=ExtResource("3_470kk")]
 unique_name_in_owner = true
+z_index = 9
 position = Vector2(284, 458)
 scale = Vector2(1.2, 1.2)
 
@@ -380,154 +381,154 @@ position_smoothing_speed = 7.0
 
 [node name="Collectibles" type="Node" parent="SceneObjects"]
 
-[node name="Area2D" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(1103, 489)
 
-[node name="Area2D2" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D2" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(2270, 254)
 
-[node name="Area2D3" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D3" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3379, 204)
 
-[node name="Area2D4" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D4" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3406, 204)
 
-[node name="Area2D5" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D5" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3431, 204)
 
-[node name="Area2D6" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D6" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3456, 204)
 
-[node name="Area2D7" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D7" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3483, 204)
 
-[node name="Area2D8" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D8" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3508, 204)
 
-[node name="Area2D9" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D9" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3533, 204)
 
-[node name="Area2D10" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D10" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3560, 204)
 
-[node name="Area2D11" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D11" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3585, 204)
 
-[node name="Area2D12" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D12" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3610, 204)
 
-[node name="Area2D13" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D13" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3637, 204)
 
-[node name="Area2D14" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D14" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3662, 204)
 
-[node name="Area2D15" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D15" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3686, 204)
 
-[node name="Area2D16" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D16" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3713, 204)
 
-[node name="Area2D17" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D17" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3738, 204)
 
-[node name="Area2D18" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D18" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3763, 204)
 
-[node name="Area2D19" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D19" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3790, 204)
 
-[node name="Area2D20" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D20" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3815, 204)
 
-[node name="Area2D21" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D21" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3840, 204)
 
-[node name="Area2D22" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D22" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3867, 204)
 
-[node name="Area2D23" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D23" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3892, 204)
 
-[node name="Area2D24" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D24" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3917, 204)
 
-[node name="Area2D25" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D25" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3944, 204)
 
-[node name="Area2D26" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D26" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3969, 204)
 
-[node name="Area2D27" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D27" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(3992, 204)
 
-[node name="Area2D28" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D28" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4019, 204)
 
-[node name="Area2D29" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D29" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4044, 204)
 
-[node name="Area2D30" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D30" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4069, 204)
 
-[node name="Area2D31" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D31" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4096, 204)
 
-[node name="Area2D32" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D32" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4121, 204)
 
-[node name="Area2D33" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D33" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4146, 204)
 
-[node name="Area2D34" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D34" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4173, 204)
 
-[node name="Area2D35" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D35" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4198, 204)
 
-[node name="Area2D36" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D36" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4223, 204)
 
-[node name="Area2D37" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D37" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4250, 204)
 
-[node name="Area2D38" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D38" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4275, 204)
 
-[node name="Area2D39" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D39" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4299, 204)
 
-[node name="Area2D40" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D40" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4326, 204)
 
-[node name="Area2D41" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D41" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4351, 204)
 
-[node name="Area2D42" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D42" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4376, 204)
 
-[node name="Area2D43" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D43" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4403, 204)
 
-[node name="Area2D44" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D44" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4428, 204)
 
-[node name="Area2D45" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D45" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4453, 204)
 
-[node name="Area2D46" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D46" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4480, 204)
 
-[node name="Area2D47" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D47" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4505, 204)
 
-[node name="Area2D48" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D48" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4530, 204)
 
-[node name="Area2D49" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D49" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4557, 204)
 
-[node name="Area2D50" parent="SceneObjects/Collectibles" instance=ExtResource("4_rhlkk")]
+[node name="Area2D50" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4582, 204)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="SceneObjects"]
@@ -554,7 +555,7 @@ anim_speed_min = 13.0
 anim_speed_max = 128.0
 anim_speed_curve = SubResource("Curve_3f6sd")
 
-[node name="Finish" parent="SceneObjects" instance=ExtResource("5_sgx7i")]
+[node name="Finish" parent="SceneObjects" instance=ExtResource("5_1f3t4")]
 z_index = 2
 position = Vector2(5024, 197)
 
@@ -564,7 +565,7 @@ offset_top = 254.0
 offset_right = 360.0
 offset_bottom = 279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 20
 text = "so hard, i know right?"
 vertical_alignment = 1
@@ -575,7 +576,7 @@ offset_top = 201.0
 offset_right = 306.0
 offset_bottom = 249.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 40
 text = "w    a    l    l
 "
@@ -588,7 +589,7 @@ offset_top = 254.0
 offset_right = 1516.0
 offset_bottom = 279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 20
 text = "please, we all know how to use stairs."
 vertical_alignment = 1
@@ -599,7 +600,7 @@ offset_top = 201.0
 offset_right = 1462.0
 offset_bottom = 249.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 40
 text = "stairs"
 vertical_alignment = 1
@@ -611,7 +612,7 @@ offset_top = 354.0
 offset_right = 3768.0
 offset_bottom = 379.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 20
 text = "it will, if i coded this correctly"
 vertical_alignment = 1
@@ -622,7 +623,7 @@ offset_top = 301.0
 offset_right = 4471.0
 offset_bottom = 349.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 40
 text = "banana make you go fast"
 vertical_alignment = 1
@@ -634,7 +635,7 @@ offset_top = 124.0
 offset_right = 2734.0
 offset_bottom = 149.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 20
 text = "this is a classic, for newbie developers"
 vertical_alignment = 1
@@ -645,7 +646,7 @@ offset_top = 71.0
 offset_right = 2634.0
 offset_bottom = 119.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 40
 text = "floating platforms with no logic whatsoever"
 vertical_alignment = 1
@@ -653,15 +654,15 @@ uppercase = true
 
 [node name="Antifall-2D" type="Area2D" parent="SceneObjects"]
 position = Vector2(0, 672)
-script = ExtResource("7_r2lrk")
+script = ExtResource("7_pj4vq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Antifall-2D"]
-position = Vector2(2252.5, 308.5)
+position = Vector2(2795.5, 308.5)
 shape = SubResource("RectangleShape2D_g7kp1")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("6_josyn")
+script = ExtResource("8_4ahrk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -683,7 +684,7 @@ offset_left = 84.0
 offset_right = -14.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_17c1e")
+theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 2

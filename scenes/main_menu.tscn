@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bnil5hxdnn1mj"]
+[gd_scene load_steps=21 format=4 uid="uid://bnil5hxdnn1mj"]
 
 [ext_resource type="Texture2D" uid="uid://ddvqmmnkux2xi" path="res://Brown.png" id="1_nl8e6"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://Terrain (16x16).png" id="2_c0t1h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://q72nx8i1bsll" path="res://logo or something.png" id="5_bkvqp"]
 [ext_resource type="Script" path="res://scenes/banana-level-1.gd" id="7_gm68a"]
 [ext_resource type="Script" path="res://scenes/banana-level-2.gd" id="8_124xm"]
+[ext_resource type="AudioStream" uid="uid://cvcecmjyarihe" path="res://bg-music-funky-lead.mp3" id="9_vdldd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho5qb"]
 texture = ExtResource("2_c0t1h")
@@ -219,6 +220,215 @@ texture = ExtResource("2_c0t1h")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ho5qb")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j0me"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cxh3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0a1cv"]
+resource_name = "fade_in_from_black"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Panel2:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 6),
+"transitions": PackedFloat32Array(0.420448, 1.7411),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jq8pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Panel2:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(414, 21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/Panel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main/Panel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tro4e"]
+resource_name = "drop_down_song_title"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 6, 12),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(414, -75), Vector2(414, 21), Vector2(414, -75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4, 6, 12),
+"transitions": PackedFloat32Array(1, -2, -2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xutfs"]
+_data = {
+"RESET": SubResource("Animation_jq8pd"),
+"drop_down_song_title": SubResource("Animation_tro4e"),
+"fade_in_from_black": SubResource("Animation_0a1cv")
+}
+
+[sub_resource type="Animation" id="Animation_6jlqm"]
+resource_name = "drop_down_song_title"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(414, -75), Vector2(414, 21), Vector2(414, -75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, -2, -2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lidgg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(414, -75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rh30e"]
+_data = {
+"RESET": SubResource("Animation_lidgg"),
+"drop_down_song_title": SubResource("Animation_6jlqm")
+}
+
 [node name="Node" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
@@ -265,10 +475,31 @@ text = "Level Two"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label3" type="Label" parent="SceneObjects"]
+texture_filter = 1
+offset_left = 529.0
+offset_top = 289.0
+offset_right = 616.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0.713726, 0.364706, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("4_scbvw")
+text = "Level Three"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LogoOrSomething" type="TextureRect" parent="CanvasLayer"]
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoOrSomething" type="TextureRect" parent="CanvasLayer/Main"]
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -283,6 +514,58 @@ grow_vertical = 2
 scale = Vector2(0.698238, 0.698238)
 texture = ExtResource("5_bkvqp")
 
+[node name="Panel" type="Panel" parent="CanvasLayer/Main"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.632
+offset_top = -399.0
+offset_right = 164.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4j0me")
+
+[node name="Label" type="Label" parent="CanvasLayer/Main/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_scbvw")
+text = "funky lead by Pianomations"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cxh3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Main"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_xutfs")
+}
+autoplay = "fade_in_from_black"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer/Main"]
+libraries = {
+"": SubResource("AnimationLibrary_rh30e")
+}
+autoplay = "drop_down_song_title"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(574, 335)
 zoom = Vector2(0.97, 0.97)
@@ -294,3 +577,12 @@ script = ExtResource("7_gm68a")
 [node name="Area2D2" parent="." instance=ExtResource("5_7ydy0")]
 position = Vector2(807, 387)
 script = ExtResource("8_124xm")
+
+[node name="Area2D3" parent="." instance=ExtResource("5_7ydy0")]
+position = Vector2(564, 327)
+script = null
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vdldd")
+volume_db = -15.0
+autoplay = true
