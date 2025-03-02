@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dnho6lujrionu" path="res://assets/images/elements/Bananas.png" id="9_xvsvu"]
 [ext_resource type="AudioStream" uid="uid://kbgqqqvr3xht" path="res://assets/songs/Bizville Meadows.mp3" id="10_onkqn"]
 [ext_resource type="Script" path="res://assets/scenes/subscenes/return.gd" id="12_c7ifi"]
-[ext_resource type="Script" path="res://assets/scenes/levels/replay.gd" id="13_71gcf"]
+[ext_resource type="Script" path="res://assets/scenes/subscenes/replay.gd" id="13_71gcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho5qb"]
 texture = ExtResource("2_x1awg")
