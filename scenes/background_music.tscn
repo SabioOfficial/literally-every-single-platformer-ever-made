@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dilfyyd3lod4j"]
-
-[ext_resource type="AudioStream" uid="uid://cvcecmjyarihe" path="res://bg-music-funky-lead.mp3" id="1_ib36m"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_ib36m")
-volume_db = -15.0
-autoplay = true
