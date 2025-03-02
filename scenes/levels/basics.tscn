@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=4 uid="uid://cjain0ba7nmt0"]
+[gd_scene load_steps=36 format=4 uid="uid://cjain0ba7nmt0"]
 
 [ext_resource type="Texture2D" uid="uid://fp6u7megs6n6" path="res://Blue.png" id="1_rsf17"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://Terrain (16x16).png" id="2_x1awg"]
 [ext_resource type="PackedScene" uid="uid://dj1xe216u3ibt" path="res://scenes/main_character.tscn" id="3_470kk"]
 [ext_resource type="PackedScene" uid="uid://dfrlfmxy3jr1d" path="res://scenes/banana.tscn" id="4_t3v67"]
 [ext_resource type="PackedScene" uid="uid://8vweqmt565p3" path="res://scenes/end.tscn" id="5_1f3t4"]
+[ext_resource type="AudioStream" uid="uid://cgp3icksr84il" path="res://sfx/banana-sfx.wav" id="5_s47jr"]
 [ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://fonts/AlbertSans-Bold.ttf" id="6_i0fqw"]
 [ext_resource type="Script" path="res://scenes/antifall_2d.gd" id="7_pj4vq"]
 [ext_resource type="Script" path="res://game_manager.gd" id="8_4ahrk"]
@@ -352,7 +353,7 @@ animations = [{
 
 [node name="SceneObjects" type="Node" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="SceneObjects"]
+[node name="Background" type="TextureRect" parent="SceneObjects"]
 texture_filter = 1
 offset_left = -1366.0
 offset_top = -564.0
@@ -361,7 +362,7 @@ offset_bottom = 1162.0
 texture = ExtResource("1_rsf17")
 stretch_mode = 1
 
-[node name="Layer0" type="TileMapLayer" parent="SceneObjects"]
+[node name="Tilemap" type="TileMapLayer" parent="SceneObjects"]
 texture_filter = 1
 use_parent_material = true
 scale = Vector2(3, 3)
@@ -531,7 +532,13 @@ position = Vector2(4557, 204)
 [node name="Area2D50" parent="SceneObjects/Collectibles" instance=ExtResource("4_t3v67")]
 position = Vector2(4582, 204)
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="SceneObjects"]
+[node name="SFX" type="AudioStreamPlayer" parent="SceneObjects/Collectibles"]
+stream = ExtResource("5_s47jr")
+volume_db = -15.0
+
+[node name="Cup" type="Node" parent="SceneObjects"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="SceneObjects/Cup"]
 z_index = 1
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_l1fbd")
@@ -555,11 +562,13 @@ anim_speed_min = 13.0
 anim_speed_max = 128.0
 anim_speed_curve = SubResource("Curve_3f6sd")
 
-[node name="Finish" parent="SceneObjects" instance=ExtResource("5_1f3t4")]
+[node name="Finish" parent="SceneObjects/Cup" instance=ExtResource("5_1f3t4")]
 z_index = 2
 position = Vector2(5024, 197)
 
-[node name="Label2" type="Label" parent="SceneObjects"]
+[node name="Labels" type="Node" parent="SceneObjects"]
+
+[node name="Label2" type="Label" parent="SceneObjects/Labels"]
 offset_left = 59.0
 offset_top = 254.0
 offset_right = 360.0
@@ -570,7 +579,7 @@ theme_override_font_sizes/font_size = 20
 text = "so hard, i know right?"
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="SceneObjects"]
+[node name="Label" type="Label" parent="SceneObjects/Labels"]
 offset_left = 58.0
 offset_top = 201.0
 offset_right = 306.0
@@ -583,10 +592,10 @@ text = "w    a    l    l
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label3" type="Label" parent="SceneObjects"]
+[node name="Label3" type="Label" parent="SceneObjects/Labels"]
 offset_left = 1215.0
 offset_top = 254.0
-offset_right = 1516.0
+offset_right = 1562.0
 offset_bottom = 279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_i0fqw")
@@ -594,7 +603,7 @@ theme_override_font_sizes/font_size = 20
 text = "please, we all know how to use stairs."
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="SceneObjects"]
+[node name="Label4" type="Label" parent="SceneObjects/Labels"]
 offset_left = 1214.0
 offset_top = 201.0
 offset_right = 1462.0
@@ -606,7 +615,7 @@ text = "stairs"
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label7" type="Label" parent="SceneObjects"]
+[node name="Label7" type="Label" parent="SceneObjects/Labels"]
 offset_left = 3411.0
 offset_top = 354.0
 offset_right = 3768.0
@@ -617,7 +626,7 @@ theme_override_font_sizes/font_size = 20
 text = "it will, if i coded this correctly"
 vertical_alignment = 1
 
-[node name="Label8" type="Label" parent="SceneObjects"]
+[node name="Label8" type="Label" parent="SceneObjects/Labels"]
 offset_left = 3410.0
 offset_top = 301.0
 offset_right = 4471.0
@@ -629,10 +638,10 @@ text = "banana make you go fast"
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label5" type="Label" parent="SceneObjects"]
+[node name="Label5" type="Label" parent="SceneObjects/Labels"]
 offset_left = 2387.0
 offset_top = 124.0
-offset_right = 2734.0
+offset_right = 2744.0
 offset_bottom = 149.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_i0fqw")
@@ -640,10 +649,10 @@ theme_override_font_sizes/font_size = 20
 text = "this is a classic, for newbie developers"
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="SceneObjects"]
+[node name="Label6" type="Label" parent="SceneObjects/Labels"]
 offset_left = 2386.0
 offset_top = 71.0
-offset_right = 2634.0
+offset_right = 3447.0
 offset_bottom = 119.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_i0fqw")
