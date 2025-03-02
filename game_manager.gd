@@ -12,6 +12,9 @@ var potassiums = 0
 var lives = 3
 var additionalspeed = 10
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _process(delta) -> void:
 	time += delta
 	msec = fmod(time, 1) * 100
@@ -22,8 +25,8 @@ func _process(delta) -> void:
 func stop() -> void:
 	$"../CanvasLayer/Win".visible = true
 	$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = $"../CanvasLayer/TimeLabel".text
-	%CharacterBody2D.stunned = true
 	set_process(false)
+	get_tree().paused = true
 
 func decrease_hp():
 	lives -= 1

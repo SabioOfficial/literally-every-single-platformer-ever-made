@@ -4,7 +4,6 @@ var stunned = false
 var SPEED = 400.0
 const JUMP_VELOCITY = -800.0
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
-@onready var flip_sfx: AudioStreamPlayer = $"../Orbs/Flip"
 
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -51,4 +50,5 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_5_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
 		velocity.y = JUMP_VELOCITY
-		flip_sfx.play()
+		if $"../Orbs/Flip":
+			$"../Orbs/Flip".play()
