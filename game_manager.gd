@@ -22,7 +22,7 @@ func _process(delta) -> void:
 	minutes = fmod(time, 3600) / 60
 	$"../CanvasLayer/TimeLabel".text = "%02d:" % minutes + "%02d." % seconds + "%03d" % msec
 
-func _input(event: InputEvent) -> void:
+func _input(InputEvent) -> void:
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 

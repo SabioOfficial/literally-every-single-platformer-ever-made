@@ -1,7 +1,29 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxx6kxa6qsytm"]
+[gd_scene load_steps=23 format=3 uid="uid://cxx6kxa6qsytm"]
 
 [ext_resource type="Script" path="res://assets/scenes/subscenes/ghost.gd" id="1_n3qr6"]
 [ext_resource type="Texture2D" uid="uid://d0jxj3mrkrt40" path="res://assets/images/elements/Idle (44x30).png" id="1_staiw"]
+[ext_resource type="Texture2D" uid="uid://dcwddywht6vrj" path="res://assets/images/elements/Hit (44x30).png" id="2_ldbja"]
+[ext_resource type="FontFile" uid="uid://db1ktkbgc41da" path="res://assets/fonts/AlbertSans-Black.ttf" id="4_s5jba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7wsb"]
+atlas = ExtResource("2_ldbja")
+region = Rect2(176, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp63s"]
+atlas = ExtResource("2_ldbja")
+region = Rect2(132, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dm8e"]
+atlas = ExtResource("2_ldbja")
+region = Rect2(88, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydjjd"]
+atlas = ExtResource("2_ldbja")
+region = Rect2(44, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h383s"]
+atlas = ExtResource("2_ldbja")
+region = Rect2(0, 0, 44, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpxwn"]
 atlas = ExtResource("1_staiw")
@@ -45,6 +67,26 @@ region = Rect2(396, 0, 44, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5olpc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7wsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp63s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dm8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydjjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h383s")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cpxwn")
@@ -98,8 +140,6 @@ position = Vector2(13.2, 9)
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_5olpc")
 autoplay = "default"
-frame = 9
-frame_progress = 0.174169
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(13, 8)
@@ -114,5 +154,22 @@ shape = SubResource("CapsuleShape2D_gw5ih")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-26, -16)
 target_position = Vector2(0, 68)
+
+[node name="RunCast2D" type="RayCast2D" parent="."]
+position = Vector2(-37, 0)
+target_position = Vector2(-161, 0)
+collision_mask = 2
+
+[node name="Detected" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 36.0
+offset_top = -33.0
+offset_right = 45.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s5jba")
+theme_override_font_sizes/font_size = 30
+text = "!"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
