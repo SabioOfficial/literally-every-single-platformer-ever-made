@@ -89,7 +89,7 @@ height = 46.0
 radius = 21.0
 height = 50.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="CharacterBody2D"]
 script = ExtResource("1_n3qr6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -110,5 +110,9 @@ shape = SubResource("CapsuleShape2D_ymryy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(13, 8)
 shape = SubResource("CapsuleShape2D_gw5ih")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-26, -16)
+target_position = Vector2(0, 68)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
