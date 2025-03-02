@@ -1,17 +1,22 @@
 extends CharacterBody2D
 
+# Variables
 var stunned = false
 var SPEED = 400.0
 const JUMP_VELOCITY = -800.0
+
+# sprite_2d
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
+# jump function
 func jump():
 	velocity.y = JUMP_VELOCITY
-	
+
+# knockbacks the player along the x axis.
 func knockback(x):
-	stunned = true
-	velocity.y = JUMP_VELOCITY
-	velocity.x = x
+	stunned = true # disable the character's movement
+	jump() # jump
+	velocity.x = x # move backwards with velocity
 
 func _physics_process(delta: float) -> void:
 	# Animations
@@ -27,10 +32,8 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		if stunned == false:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cjain0ba7nmt0"]
+[gd_scene load_steps=39 format=4 uid="uid://cjain0ba7nmt0"]
 
 [ext_resource type="Texture2D" uid="uid://fp6u7megs6n6" path="res://assets/images/background/Blue.png" id="1_rsf17"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://assets/images/terrain/Terrain (16x16).png" id="2_x1awg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dnho6lujrionu" path="res://assets/images/elements/Bananas.png" id="9_xvsvu"]
 [ext_resource type="AudioStream" uid="uid://kbgqqqvr3xht" path="res://assets/songs/Bizville Meadows.mp3" id="10_onkqn"]
 [ext_resource type="Script" path="res://assets/scenes/subscenes/return.gd" id="12_c7ifi"]
+[ext_resource type="Script" path="res://assets/scenes/levels/replay.gd" id="13_71gcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho5qb"]
 texture = ExtResource("2_x1awg")
@@ -765,5 +766,14 @@ theme_override_fonts/font = ExtResource("6_i0fqw")
 text = "Return to Home"
 script = ExtResource("12_c7ifi")
 
+[node name="Replay" type="Button" parent="CanvasLayer/Win/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_i0fqw")
+text = "Replay Level
+"
+script = ExtResource("13_71gcf")
+
 [connection signal="body_entered" from="SceneObjects/Antifall-2D" to="SceneObjects/Antifall-2D" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Win/VBoxContainer/Return" to="CanvasLayer/Win/VBoxContainer/Return" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Win/VBoxContainer/Replay" to="CanvasLayer/Win/VBoxContainer/Replay" method="_on_pressed"]
