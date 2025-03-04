@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://cxx6kxa6qsytm"]
 
-[ext_resource type="Script" path="res://assets/scenes/subscenes/ghost.gd" id="1_n3qr6"]
+[ext_resource type="Script" uid="uid://bcucjsf3y2xxi" path="res://assets/scenes/subscenes/ghost.gd" id="1_n3qr6"]
 [ext_resource type="Texture2D" uid="uid://d0jxj3mrkrt40" path="res://assets/images/elements/Idle (44x30).png" id="1_staiw"]
 [ext_resource type="Texture2D" uid="uid://dcwddywht6vrj" path="res://assets/images/elements/Hit (44x30).png" id="2_ldbja"]
 [ext_resource type="FontFile" uid="uid://db1ktkbgc41da" path="res://assets/fonts/AlbertSans-Black.ttf" id="4_s5jba"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://biutliidyhgn"]
 
-[ext_resource type="Script" path="res://assets/dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://cx1a4ihunaf66" path="res://assets/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="FontFile" uid="uid://to75mffj3ho" path="res://assets/fonts/AlbertSans-Regular.ttf" id="2_1arqr"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://sve1jb2u1l7t" path="res://assets/fonts/AlbertSans-Italic.ttf" id="3_0jiiy"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://c3wpoewkhrn" path="res://assets/fonts/AlbertSans-BoldItalic.ttf" id="4_ckesc"]
 [ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://assets/fonts/AlbertSans-Bold.ttf" id="5_2s3a8"]
 

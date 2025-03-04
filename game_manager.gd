@@ -7,6 +7,7 @@ var time: float = 0.0
 var minutes: int = 0
 var seconds: int = 0
 var msec: int = 0
+var formattedTime: String = ""
 
 var potassiums = 0
 var lives = 3
@@ -20,7 +21,8 @@ func _process(delta) -> void:
 	msec = fmod(time, 1) * 1000
 	seconds = fmod(time, 60)
 	minutes = fmod(time, 3600) / 60
-	$"../CanvasLayer/TimeLabel".text = "%02d:" % minutes + "%02d." % seconds + "%03d" % msec
+	formattedTime = "%02d:" % minutes + "%02d." % seconds + "%03d" % msec
+	$"../CanvasLayer/TimeLabel".text = formattedTime
 
 func _input(InputEvent) -> void:
 	if Input.is_action_just_pressed("reset"):
@@ -28,7 +30,23 @@ func _input(InputEvent) -> void:
 
 func stop() -> void:
 	$"../CanvasLayer/Win".visible = true
-	$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = $"../CanvasLayer/TimeLabel".text
+	$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime
+	if (time < 15):
+		$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  SWIFT!"
+	else:
+		if (time < 20):
+			$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  QUICK!"
+		else:
+			if (time < 30):
+				$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  FAST!"
+			else:
+				$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime
+	
+	var bananas = $"../SceneObjects/Collectibles".get_child_count() - 1
+	if (bananas == 0):
+		$"../CanvasLayer/Win/VBoxContainer/Bananas".text = str(potassiums) + " bananas  |  MAX"
+	else:
+		$"../CanvasLayer/Win/VBoxContainer/Bananas".text = str(potassiums) + " bananas"
 	set_process(false)
 	get_tree().paused = true
 

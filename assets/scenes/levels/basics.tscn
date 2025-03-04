@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cjain0ba7nmt0"]
+[gd_scene load_steps=41 format=4 uid="uid://cjain0ba7nmt0"]
 
 [ext_resource type="Texture2D" uid="uid://fp6u7megs6n6" path="res://assets/images/background/Blue.png" id="1_rsf17"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://assets/images/terrain/Terrain (16x16).png" id="2_x1awg"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://8vweqmt565p3" path="res://assets/scenes/subscenes/end.tscn" id="5_1f3t4"]
 [ext_resource type="AudioStream" uid="uid://cgp3icksr84il" path="res://assets/sfx/banana-sfx.wav" id="5_s47jr"]
 [ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://assets/fonts/AlbertSans-Bold.ttf" id="6_i0fqw"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/antifall_2d.gd" id="7_pj4vq"]
-[ext_resource type="Script" path="res://game_manager.gd" id="8_4ahrk"]
+[ext_resource type="Script" uid="uid://doudq6rda06g5" path="res://assets/scenes/subscenes/antifall_2d.gd" id="7_pj4vq"]
+[ext_resource type="Script" uid="uid://1nyq07k4fubn" path="res://game_manager.gd" id="8_4ahrk"]
+[ext_resource type="Script" uid="uid://cvvevlkvomgp1" path="res://assets/scenes/levels/task_manager-lvl1.gd" id="8_cgpu2"]
 [ext_resource type="Texture2D" uid="uid://dnho6lujrionu" path="res://assets/images/elements/Bananas.png" id="9_xvsvu"]
 [ext_resource type="AudioStream" uid="uid://kbgqqqvr3xht" path="res://assets/songs/Bizville Meadows.mp3" id="10_onkqn"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/return.gd" id="12_c7ifi"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/replay.gd" id="13_71gcf"]
+[ext_resource type="Script" uid="uid://ga3s1ig55jx6" path="res://assets/scenes/subscenes/return.gd" id="12_c7ifi"]
+[ext_resource type="Script" uid="uid://cif4iycr2uaa4" path="res://assets/scenes/subscenes/replay.gd" id="13_71gcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho5qb"]
 texture = ExtResource("2_x1awg")
@@ -208,12 +209,15 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_3f6sd"]
-max_value = 200.0
+_limits = [0.0, 200.0, 0.0, 1.0]
 _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7kp1"]
 size = Vector2(8325, 365)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7d088"]
+normal = Vector2(-1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jtc4"]
 bg_color = Color(0, 0, 0, 0.156863)
@@ -571,99 +575,6 @@ position = Vector2(5040, 203)
 
 [node name="Labels" type="Node" parent="SceneObjects"]
 
-[node name="Label2" type="Label" parent="SceneObjects/Labels"]
-offset_left = 59.0
-offset_top = 254.0
-offset_right = 360.0
-offset_bottom = 279.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 20
-text = "so hard, i know right?"
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="SceneObjects/Labels"]
-offset_left = 58.0
-offset_top = 201.0
-offset_right = 306.0
-offset_bottom = 249.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 40
-text = "w    a    l    l
-"
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label3" type="Label" parent="SceneObjects/Labels"]
-offset_left = 1215.0
-offset_top = 254.0
-offset_right = 1562.0
-offset_bottom = 279.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 20
-text = "please, we all know how to use stairs."
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="SceneObjects/Labels"]
-offset_left = 1214.0
-offset_top = 201.0
-offset_right = 1462.0
-offset_bottom = 249.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 40
-text = "stairs"
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label7" type="Label" parent="SceneObjects/Labels"]
-offset_left = 3411.0
-offset_top = 354.0
-offset_right = 3768.0
-offset_bottom = 379.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 20
-text = "it will, if i coded this correctly"
-vertical_alignment = 1
-
-[node name="Label8" type="Label" parent="SceneObjects/Labels"]
-offset_left = 3410.0
-offset_top = 301.0
-offset_right = 4471.0
-offset_bottom = 349.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 40
-text = "banana make you go fast"
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label5" type="Label" parent="SceneObjects/Labels"]
-offset_left = 2387.0
-offset_top = 124.0
-offset_right = 2744.0
-offset_bottom = 149.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 20
-text = "this is a classic, for newbie developers"
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="SceneObjects/Labels"]
-offset_left = 2386.0
-offset_top = 71.0
-offset_right = 3447.0
-offset_bottom = 119.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_i0fqw")
-theme_override_font_sizes/font_size = 40
-text = "floating platforms with no logic whatsoever"
-vertical_alignment = 1
-uppercase = true
-
 [node name="Antifall-2D" type="Area2D" parent="SceneObjects"]
 position = Vector2(0, 672)
 script = ExtResource("7_pj4vq")
@@ -671,6 +582,33 @@ script = ExtResource("7_pj4vq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Antifall-2D"]
 position = Vector2(2795.5, 308.5)
 shape = SubResource("RectangleShape2D_g7kp1")
+
+[node name="TaskManager" type="Node" parent="SceneObjects"]
+script = ExtResource("8_cgpu2")
+
+[node name="Stairs" type="Area2D" parent="SceneObjects/TaskManager"]
+position = Vector2(1110, 241)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/TaskManager/Stairs"]
+shape = SubResource("WorldBoundaryShape2D_7d088")
+
+[node name="Platforms" type="Area2D" parent="SceneObjects/TaskManager"]
+position = Vector2(2279, 241)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/TaskManager/Platforms"]
+shape = SubResource("WorldBoundaryShape2D_7d088")
+
+[node name="Banana" type="Area2D" parent="SceneObjects/TaskManager"]
+position = Vector2(3363, 241)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/TaskManager/Banana"]
+shape = SubResource("WorldBoundaryShape2D_7d088")
+
+[node name="Timing" type="Area2D" parent="SceneObjects/TaskManager"]
+position = Vector2(4610, 241)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/TaskManager/Timing"]
+shape = SubResource("WorldBoundaryShape2D_7d088")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -729,6 +667,42 @@ text = "0.00.000"
 vertical_alignment = 1
 justification_flags = 227
 
+[node name="TaskTitle" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -327.0
+offset_top = 37.0
+offset_right = -40.0
+offset_bottom = 66.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_i0fqw")
+theme_override_font_sizes/font_size = 24
+text = "TASK"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 227
+
+[node name="ActualTaskText" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -327.0
+offset_top = 64.0
+offset_right = -40.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_i0fqw")
+theme_override_font_sizes/font_size = 24
+text = "Jump over the wall. Use W or Spacebar to jump!"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 227
+
 [node name="Win" type="Panel" parent="CanvasLayer"]
 visible = false
 anchors_preset = 15
@@ -752,6 +726,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FinalTime" type="Label" parent="CanvasLayer/Win/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_i0fqw")
 theme_override_font_sizes/font_size = 50
@@ -759,8 +734,19 @@ text = "0:00.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Bananas" type="Label" parent="CanvasLayer/Win/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_i0fqw")
+theme_override_font_sizes/font_size = 25
+text = "0 bananas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Return" type="Button" parent="CanvasLayer/Win/VBoxContainer"]
 process_mode = 3
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_i0fqw")
 text = "Return to Home"
@@ -768,6 +754,7 @@ script = ExtResource("12_c7ifi")
 
 [node name="Replay" type="Button" parent="CanvasLayer/Win/VBoxContainer"]
 process_mode = 3
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_i0fqw")
 text = "Replay Level
@@ -775,5 +762,9 @@ text = "Replay Level
 script = ExtResource("13_71gcf")
 
 [connection signal="body_entered" from="SceneObjects/Antifall-2D" to="SceneObjects/Antifall-2D" method="_on_body_entered"]
+[connection signal="body_entered" from="SceneObjects/TaskManager/Stairs" to="SceneObjects/TaskManager" method="_on_stairs_body_entered"]
+[connection signal="body_entered" from="SceneObjects/TaskManager/Platforms" to="SceneObjects/TaskManager" method="_on_platforms_body_entered"]
+[connection signal="body_entered" from="SceneObjects/TaskManager/Banana" to="SceneObjects/TaskManager" method="_on_banana_body_entered"]
+[connection signal="body_entered" from="SceneObjects/TaskManager/Timing" to="SceneObjects/TaskManager" method="_on_timing_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Win/VBoxContainer/Return" to="CanvasLayer/Win/VBoxContainer/Return" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Win/VBoxContainer/Replay" to="CanvasLayer/Win/VBoxContainer/Replay" method="_on_pressed"]

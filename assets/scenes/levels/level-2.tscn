@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cpchehewq2hlm"]
+[gd_scene load_steps=41 format=4 uid="uid://cpchehewq2hlm"]
 
 [ext_resource type="Texture2D" uid="uid://ddvqmmnkux2xi" path="res://assets/images/background/Brown.png" id="1_0lvsl"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://assets/images/terrain/Terrain (16x16).png" id="2_5cvwa"]
@@ -7,15 +7,16 @@
 [ext_resource type="AudioStream" uid="uid://cgp3icksr84il" path="res://assets/sfx/banana-sfx.wav" id="5_7ssvm"]
 [ext_resource type="PackedScene" uid="uid://dfrlfmxy3jr1d" path="res://assets/scenes/subscenes/banana.tscn" id="5_7vgsh"]
 [ext_resource type="AudioStream" uid="uid://06dytm70wuc3" path="res://assets/sfx/flip.wav" id="5_mm1go"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/antifall_2d.gd" id="6_ub2as"]
-[ext_resource type="Script" path="res://game_manager.gd" id="7_uxxty"]
+[ext_resource type="Script" uid="uid://doudq6rda06g5" path="res://assets/scenes/subscenes/antifall_2d.gd" id="6_ub2as"]
+[ext_resource type="Script" uid="uid://1nyq07k4fubn" path="res://game_manager.gd" id="7_uxxty"]
 [ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://assets/fonts/AlbertSans-Bold.ttf" id="8_7h1w1"]
 [ext_resource type="Texture2D" uid="uid://dnho6lujrionu" path="res://assets/images/elements/Bananas.png" id="9_a071d"]
 [ext_resource type="PackedScene" uid="uid://d0lchft30phto" path="res://assets/scenes/subscenes/flip-orb.tscn" id="10_8f4wh"]
+[ext_resource type="Script" uid="uid://bb7x5eau35afp" path="res://assets/scenes/levels/task_manager-lvl2.gd" id="11_1xct0"]
 [ext_resource type="AudioStream" uid="uid://ckrpgwn36cvpl" path="res://assets/songs/Grasslands Theme.mp3" id="11_vfvss"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/save_manager.gd" id="13_l15aq"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/return.gd" id="14_gdbgx"]
-[ext_resource type="Script" path="res://assets/scenes/subscenes/replay.gd" id="15_oehhg"]
+[ext_resource type="Script" uid="uid://b5arukreqem6a" path="res://assets/scenes/subscenes/save_manager.gd" id="13_l15aq"]
+[ext_resource type="Script" uid="uid://ga3s1ig55jx6" path="res://assets/scenes/subscenes/return.gd" id="14_gdbgx"]
+[ext_resource type="Script" uid="uid://cif4iycr2uaa4" path="res://assets/scenes/subscenes/replay.gd" id="15_oehhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho5qb"]
 texture = ExtResource("2_5cvwa")
@@ -229,6 +230,9 @@ sources/0 = SubResource("TileSetAtlasSource_ho5qb")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mpbuw"]
 distance = 243.5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8q8r1"]
+normal = Vector2(-1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4j78"]
 bg_color = Color(0, 0, 0, 0.156863)
@@ -488,6 +492,21 @@ theme_override_font_sizes/font_size = 20
 text = "<-"
 vertical_alignment = 1
 
+[node name="TaskManager" type="Node" parent="SceneObjects"]
+script = ExtResource("11_1xct0")
+
+[node name="WoodPlat" type="Area2D" parent="SceneObjects/TaskManager"]
+position = Vector2(669, 93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/TaskManager/WoodPlat"]
+shape = SubResource("WorldBoundaryShape2D_8q8r1")
+
+[node name="Tower" type="Area2D" parent="SceneObjects/TaskManager"]
+position = Vector2(1347, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/TaskManager/Tower"]
+shape = SubResource("WorldBoundaryShape2D_8q8r1")
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_uxxty")
@@ -547,6 +566,42 @@ text = "0.00.000"
 vertical_alignment = 1
 justification_flags = 227
 
+[node name="TaskTitle" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -327.0
+offset_top = 37.0
+offset_right = -40.0
+offset_bottom = 66.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_7h1w1")
+theme_override_font_sizes/font_size = 24
+text = "TASK"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 227
+
+[node name="ActualTaskText" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -577.0
+offset_top = 64.0
+offset_right = -40.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_7h1w1")
+theme_override_font_sizes/font_size = 24
+text = "Reach the tower!"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 227
+
 [node name="Win" type="Panel" parent="CanvasLayer"]
 visible = false
 anchors_preset = 15
@@ -570,6 +625,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FinalTime" type="Label" parent="CanvasLayer/Win/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_7h1w1")
 theme_override_font_sizes/font_size = 50
@@ -577,8 +633,19 @@ text = "0:00.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Bananas" type="Label" parent="CanvasLayer/Win/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_7h1w1")
+theme_override_font_sizes/font_size = 25
+text = "0 bananas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Return" type="Button" parent="CanvasLayer/Win/VBoxContainer"]
 process_mode = 3
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_7h1w1")
 text = "Return to Home"
@@ -586,6 +653,7 @@ script = ExtResource("14_gdbgx")
 
 [node name="Replay" type="Button" parent="CanvasLayer/Win/VBoxContainer"]
 process_mode = 3
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_7h1w1")
 text = "Replay Level
@@ -595,5 +663,7 @@ script = ExtResource("15_oehhg")
 [connection signal="body_entered" from="SceneObjects/Orbs/Area2D5" to="SceneObjects/CharacterBody2D" method="_on_area_2d_5_body_entered"]
 [connection signal="body_entered" from="SceneObjects/Orbs/Area2D6" to="SceneObjects/CharacterBody2D" method="_on_area_2d_5_body_entered"]
 [connection signal="body_entered" from="SceneObjects/Antifall-2D" to="SceneObjects/Antifall-2D" method="_on_body_entered"]
+[connection signal="body_entered" from="SceneObjects/TaskManager/WoodPlat" to="SceneObjects/TaskManager" method="_on_wood_plat_body_entered"]
+[connection signal="body_entered" from="SceneObjects/TaskManager/Tower" to="SceneObjects/TaskManager" method="_on_tower_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Win/VBoxContainer/Return" to="CanvasLayer/Win/VBoxContainer/Return" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Win/VBoxContainer/Replay" to="CanvasLayer/Win/VBoxContainer/Replay" method="_on_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://dj1xe216u3ibt"]
 
-[ext_resource type="Script" path="res://assets/scenes/subscenes/main_character.gd" id="1_dhba4"]
+[ext_resource type="Script" uid="uid://dvkdmr78vhqe8" path="res://assets/scenes/subscenes/main_character.gd" id="1_dhba4"]
 [ext_resource type="Texture2D" uid="uid://i3l7dk2rr4nt" path="res://assets/images/elements/Jump (32x32).png" id="1_h1xhg"]
 [ext_resource type="Texture2D" uid="uid://dtd5wrxeh6ccc" path="res://assets/images/elements/Idle (32x32).png" id="2_dt3w4"]
 [ext_resource type="Texture2D" uid="uid://ckgbmsglwsj0l" path="res://assets/images/elements/Run (32x32).png" id="4_rx0oh"]
@@ -187,9 +187,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_we01n"]
-radius = 19.5
-height = 57.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlvvc"]
+size = Vector2(39, 47)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_dhba4")
@@ -203,5 +202,13 @@ autoplay = "default"
 frame_progress = 0.548944
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15.5, 19.5)
-shape = SubResource("CapsuleShape2D_we01n")
+position = Vector2(15.5, 23.5)
+shape = SubResource("RectangleShape2D_wlvvc")
+
+[node name="CrouchRayCastL" type="RayCast2D" parent="."]
+position = Vector2(-3, 24)
+target_position = Vector2(0, -82)
+
+[node name="CrouchRayCastR" type="RayCast2D" parent="."]
+position = Vector2(34, 24)
+target_position = Vector2(0, -82)

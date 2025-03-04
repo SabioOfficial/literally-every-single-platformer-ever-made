@@ -34,6 +34,8 @@ func _process(_delta):
 		move_character()
 		detect_turn_around()
 		detect_player()
+	if dead == true:
+		$AnimatedSprite2D.speed_scale = 1
 		
 func move_character():
 	velocity.x = -speed if is_moving_left else speed
@@ -49,8 +51,11 @@ func detect_turn_around():
 func detect_player():
 	if $RunCast2D.is_colliding():
 		$Detected.visible = true
-		$AnimatedSprite2D.speed_scale = 32 * 3
-		speed = 96
+		# $AnimatedSprite2D.speed_scale = 3
+		var tweenSpeed = create_tween()
+		tweenSpeed.tween_property(self, "speed", 96, 3)
+		var tweenAnimSpeed = create_tween()
+		tweenAnimSpeed.tween_property($AnimatedSprite2D, "speed_scale", 3, 1)
 	else:
 		$Detected.visible = false
 		$AnimatedSprite2D.speed_scale = 1
