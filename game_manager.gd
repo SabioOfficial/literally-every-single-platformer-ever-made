@@ -9,9 +9,8 @@ var seconds: int = 0
 var msec: int = 0
 var formattedTime: String = ""
 
-var potassiums = 0
-var lives = 3
-var additionalspeed = 10
+var potassiums: int = 0
+var lives: int = 3
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -33,16 +32,13 @@ func stop() -> void:
 	$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime
 	if (time < 15):
 		$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  SWIFT!"
+	elif (time < 20):
+		$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  QUICK!"
+	elif (time < 30):
+		$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  FAST!"
 	else:
-		if (time < 20):
-			$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  QUICK!"
-		else:
-			if (time < 30):
-				$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime + "  |  FAST!"
-			else:
-				$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime
-	
-	var bananas = $"../SceneObjects/Collectibles".get_child_count() - 1
+		$"../CanvasLayer/Win/VBoxContainer/FinalTime".text = formattedTime
+	var bananas: int = $"../SceneObjects/Collectibles".get_child_count() - 1
 	if (bananas == 0):
 		$"../CanvasLayer/Win/VBoxContainer/Bananas".text = str(potassiums) + " bananas  |  MAX"
 	else:
@@ -52,7 +48,6 @@ func stop() -> void:
 
 func decrease_hp():
 	lives -= 1
-	print(lives)
 	for h in 3:
 		if (h < lives):
 			hearts[h].show()
@@ -65,4 +60,4 @@ func decrease_hp():
 func add_potassium():
 	potassiums += 1
 	points_label.text = str(potassiums)
-	%CharacterBody2D.SPEED += additionalspeed
+	%CharacterBody2D.SPEED += 10

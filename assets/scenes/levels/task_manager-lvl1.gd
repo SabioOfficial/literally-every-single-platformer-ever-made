@@ -1,20 +1,20 @@
 extends Node
 
 @onready var actual_task_text: Label = $"../../CanvasLayer/ActualTaskText"
-var stairs_entered = false
-var platforms_entered = false
-var banana_entered = false
-var timing_entered = false
+var ueahs_entered: bool = false
+var ueahsedge_entered: bool = false
+var banana_entered: bool = false
+var timing_entered: bool = false
 
-func _on_stairs_body_entered(body: Node2D) -> void:
-	if (body.name == "CharacterBody2D" && stairs_entered == false):
-		stairs_entered = true
-		actual_task_text.text = "Get the banana!"
+func _on_ueahs_body_entered(body: Node2D) -> void:
+	if (body.name == "CharacterBody2D" && ueahs_entered == false):
+		ueahs_entered = true
+		actual_task_text.text = "You can fit into 2 tile gaps! These obstacles are called 'Ueahs'!"
 
-func _on_platforms_body_entered(body: Node2D) -> void:
-	if (body.name == "CharacterBody2D" && platforms_entered == false):
-		platforms_entered = true
-		actual_task_text.text = "Don't fall off- or you'll have to restart the level!"
+func _on_ueahsedge_body_entered(body: Node2D) -> void:
+	if (body.name == "CharacterBody2D" && ueahsedge_entered == false):
+		ueahsedge_entered = true
+		actual_task_text.text = "Stand on the edge of the Ueahs and try jumping to the next Ueah!"
 
 func _on_banana_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D" && banana_entered == false):

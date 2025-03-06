@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ddvqmmnkux2xi" path="res://assets/images/background/Brown.png" id="1_nl8e6"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://assets/images/terrain/Terrain (16x16).png" id="2_c0t1h"]
-[ext_resource type="Script" uid="uid://dvkdmr78vhqe8" path="res://assets/scenes/subscenes/main_character.gd" id="3_k5lxb"]
 [ext_resource type="Texture2D" uid="uid://dtd5wrxeh6ccc" path="res://assets/images/elements/Idle (32x32).png" id="4_8jvet"]
 [ext_resource type="FontFile" uid="uid://ctftsmu4rn8kc" path="res://assets/fonts/AlbertSans-Bold.ttf" id="4_scbvw"]
 [ext_resource type="PackedScene" uid="uid://dfrlfmxy3jr1d" path="res://assets/scenes/subscenes/banana.tscn" id="5_7ydy0"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ckgbmsglwsj0l" path="res://assets/images/elements/Run (32x32).png" id="6_fuske"]
 [ext_resource type="Script" uid="uid://bapk6y7utfmo2" path="res://assets/scenes/subscenes/camera_2d_main_menu.gd" id="6_u3jgu"]
 [ext_resource type="Script" uid="uid://dx1141sd87u2" path="res://assets/scenes/subscenes/banana-level-1.gd" id="7_gm68a"]
+[ext_resource type="Script" uid="uid://dddg7iqcgl623" path="res://assets/scenes/subscenes/character_body_2d-main_menu.gd" id="7_k5f6t"]
 [ext_resource type="Script" uid="uid://bkokq41o883nw" path="res://assets/scenes/subscenes/banana-level-2.gd" id="8_124xm"]
 [ext_resource type="AudioStream" uid="uid://cvcecmjyarihe" path="res://assets/songs/bg-music-funky-lead.mp3" id="9_vdldd"]
 
@@ -662,7 +662,7 @@ script = ExtResource("6_5dc4r")
 z_index = 9
 position = Vector2(556, 458)
 scale = Vector2(1.2, 1.2)
-script = ExtResource("3_k5lxb")
+script = ExtResource("7_k5f6t")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="SceneObjects/CharacterBody2D"]
 texture_filter = 1
@@ -675,6 +675,14 @@ frame_progress = 0.548944
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/CharacterBody2D"]
 position = Vector2(15.5, 19.5)
 shape = SubResource("CapsuleShape2D_we01n")
+
+[node name="CrouchRayCastL" type="RayCast2D" parent="SceneObjects/CharacterBody2D"]
+position = Vector2(-3, 24)
+target_position = Vector2(0, -82)
+
+[node name="CrouchRayCastR" type="RayCast2D" parent="SceneObjects/CharacterBody2D"]
+position = Vector2(34, 24)
+target_position = Vector2(0, -82)
 
 [node name="Camera2D" type="Camera2D" parent="SceneObjects"]
 offset = Vector2(286, 162)
