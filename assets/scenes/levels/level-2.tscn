@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cpchehewq2hlm"]
+[gd_scene load_steps=40 format=4 uid="uid://cpchehewq2hlm"]
 
 [ext_resource type="Texture2D" uid="uid://ddvqmmnkux2xi" path="res://assets/images/background/Brown.png" id="1_0lvsl"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://assets/images/terrain/Terrain (16x16).png" id="2_5cvwa"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://d0lchft30phto" path="res://assets/scenes/subscenes/flip-orb.tscn" id="10_8f4wh"]
 [ext_resource type="Script" uid="uid://bb7x5eau35afp" path="res://assets/scenes/levels/task_manager-lvl2.gd" id="11_1xct0"]
 [ext_resource type="AudioStream" uid="uid://ckrpgwn36cvpl" path="res://assets/songs/Grasslands Theme.mp3" id="11_vfvss"]
-[ext_resource type="Script" uid="uid://b5arukreqem6a" path="res://assets/scenes/subscenes/save_manager.gd" id="13_l15aq"]
 [ext_resource type="Script" uid="uid://ga3s1ig55jx6" path="res://assets/scenes/subscenes/return.gd" id="14_gdbgx"]
 [ext_resource type="Script" uid="uid://cif4iycr2uaa4" path="res://assets/scenes/subscenes/replay.gd" id="15_oehhg"]
 
@@ -517,7 +516,6 @@ stream = ExtResource("11_vfvss")
 autoplay = true
 
 [node name="SaveManager" type="Node" parent="."]
-script = ExtResource("13_l15aq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
