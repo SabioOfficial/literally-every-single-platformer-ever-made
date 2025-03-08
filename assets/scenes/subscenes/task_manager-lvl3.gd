@@ -1,10 +1,10 @@
 extends Node
 
 @onready var actual_task_text: Label = $"../../CanvasLayer/ActualTaskText"
-var enemy_entered = false
-var basement_entered = false
-var tight_entered = false
-var platforms2_entered = false
+var enemy_entered: bool = false
+var basement_entered: bool = false
+var tight_entered: bool = false
+var platforms2_entered: bool = false
 
 func _on_enemy_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D" && enemy_entered == false):

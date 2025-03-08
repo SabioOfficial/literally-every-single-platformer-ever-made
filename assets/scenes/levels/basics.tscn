@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cjain0ba7nmt0"]
+[gd_scene load_steps=45 format=4 uid="uid://cjain0ba7nmt0"]
 
 [ext_resource type="Texture2D" uid="uid://fp6u7megs6n6" path="res://assets/images/background/Blue.png" id="1_rsf17"]
 [ext_resource type="Texture2D" uid="uid://cnn8ck1ljjver" path="res://assets/images/terrain/Terrain (16x16).png" id="2_x1awg"]
@@ -355,6 +355,94 @@ animations = [{
 "name": &"default",
 "speed": 20.0
 }]
+
+[sub_resource type="Animation" id="Animation_4ny72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SceneTransition/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/SceneTransition/ColorRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+
+[sub_resource type="Animation" id="Animation_k5f6t"]
+resource_name = "slide_in_from_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SceneTransition/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/SceneTransition/ColorRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(1151, 648)]
+}
+
+[sub_resource type="Animation" id="Animation_hr71l"]
+resource_name = "slide_out_to_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SceneTransition/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/SceneTransition/ColorRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1151, 648), Vector2(0, 648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ny72"]
+_data = {
+&"RESET": SubResource("Animation_4ny72"),
+&"slide_in_from_left": SubResource("Animation_k5f6t"),
+&"slide_out_to_right": SubResource("Animation_hr71l")
+}
 
 [node name="Node" type="Node"]
 
@@ -764,6 +852,20 @@ theme_override_fonts/font = ExtResource("6_i0fqw")
 text = "Replay Level
 "
 script = ExtResource("13_71gcf")
+
+[node name="SceneTransition" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_4ny72")
+}
+
+[node name="ColorRect" type="ColorRect" parent="SceneTransition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="SceneObjects/Antifall-2D" to="SceneObjects/Antifall-2D" method="_on_body_entered"]
 [connection signal="body_entered" from="SceneObjects/TaskManager/Ueahs" to="SceneObjects/TaskManager" method="_on_ueahs_body_entered"]

@@ -1,5 +1,6 @@
 extends Node
 
+@onready var scene_transition: AnimationPlayer = $"../SceneTransition"
 @onready var points_label: Label = %PointsLabel
 @export var hearts: Array[Node]
 
@@ -14,6 +15,7 @@ var lives: int = 3
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	scene_transition.play("slide_out_to_right")
 
 func _process(delta) -> void:
 	time += delta

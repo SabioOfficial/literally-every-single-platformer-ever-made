@@ -1,8 +1,8 @@
 extends Node
 
 @onready var actual_task_text: Label = $"../../CanvasLayer/ActualTaskText"
-var woodplat_entered = false
-var tower_entered = false
+var woodplat_entered: bool = false
+var tower_entered: bool = false
 
 func _on_wood_plat_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D" && woodplat_entered == false):
